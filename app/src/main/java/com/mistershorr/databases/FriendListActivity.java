@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -55,7 +56,6 @@ public class FriendListActivity extends AppCompatActivity {
             {
                 // every loaded object from the "Contact" table is now an individual java.util.Map
                 Log.d("LOADED FRIENDS", "handleResponse: " + foundFriends.toString());
-                //TODO make a custom adapter to display friends n load the list that is retrieved.
                 friendList = foundFriends;
                 friendAdapter = new FriendListAdapter(friendList);
                 listViewFriends.setAdapter(friendAdapter);
@@ -68,6 +68,7 @@ public class FriendListActivity extends AppCompatActivity {
             }
         });
         setListeners();
+        registerForContextMenu(listViewFriends);
 
     }
     @Override
@@ -85,7 +86,6 @@ public class FriendListActivity extends AppCompatActivity {
             {
                 // every loaded object from the "Contact" table is now an individual java.util.Map
                 Log.d("LOADED FRIENDS", "handleResponse: " + foundFriends.toString());
-                //TODO make a custom adapter to display friends n load the list that is retrieved.
                 friendList = foundFriends;
                 friendAdapter = new FriendListAdapter(friendList);
                 listViewFriends.setAdapter(friendAdapter);
@@ -119,9 +119,13 @@ public class FriendListActivity extends AppCompatActivity {
                 startActivity(startFriendsDetailIntent);
             }
         } );
-//        listViewFriends.setOnItemLongClickListener(new AdapterView, new View view, int position, long id{
-//            public void onItem
-//        });
+        listViewFriends.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                deleteContact();
+                return false;
+            }
+        });
 
 
     }
@@ -166,7 +170,7 @@ public class FriendListActivity extends AppCompatActivity {
 
         // create a new object, so there is something to delete
 
-        Backendless.Persistence.save( friendList.get(0), new AsyncCallback<Friend>()
+        Backendless.Persistence.save( friendList.get(0), new AsyncCallback<Friend>()//TODO needs to be changed
         {
             public void handleResponse( Friend savedFriend )
             {
@@ -177,6 +181,7 @@ public class FriendListActivity extends AppCompatActivity {
                             {
                                 // Contact has been deleted. The response is the
                                 // time in milliseconds when the object was deleted
+
                             }
                             public void handleFault( BackendlessFault fault )
                             {
