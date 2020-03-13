@@ -62,7 +62,7 @@ public class RegistrationActivity extends AppCompatActivity {
         user.setPassword(editTextPassword.getText().toString());
         user.setProperty("name", editTextName.getText().toString());
         user.setProperty("username", editTextUsername.getText().toString());
-         
+
 
         Backendless.UserService.register( user, new AsyncCallback<BackendlessUser>()
         {

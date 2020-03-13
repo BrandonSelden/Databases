@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FriendsDetailActivity">
+
+    <EditText
+        android:id="@+id/editText_name_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textView_CLUMSINESS_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_CLUMSINESS_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clumsiness"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_clumsiness_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_name_friends_detail" />
+
+    <SeekBar
+        android:id="@+id/seekBar_clumsiness_friends_detail"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="9"
+        app:layout_constraintBottom_toTopOf="@+id/switch_awesome_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_CLUMSINESS_friends_detail" />
+
+    <Switch
+        android:id="@+id/switch_awesome_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Awesome?"
+        app:layout_constraintBottom_toTopOf="@+id/textView_GYM_FREQUENCY_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_clumsiness_friends_detail" />
+
+    <TextView
+        android:id="@+id/textView_GYM_FREQUENCY_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gym Frequency"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar_gym_frequency_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch_awesome_friends_detail" />
+
+    <SeekBar
+        android:id="@+id/seekBar_gym_frequency_friends_detail"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:max="13"
+        app:layout_constraintBottom_toTopOf="@+id/textView_TRUST_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_GYM_FREQUENCY_friends_detail" />
+
+    <TextView
+        android:id="@+id/textView_TRUST_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trust"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar_trust_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_gym_frequency_friends_detail" />
+
+    <RatingBar
+        android:id="@+id/ratingBar_trust_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView_MONEY_OWED_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_TRUST_friends_detail" />
+
+    <EditText
+        android:id="@+id/editText_money_owed_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="$5.00"
+        android:inputType="numberDecimal"
+        android:text="0.00"
+        app:layout_constraintBottom_toTopOf="@+id/button_confirm_friends_activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_MONEY_OWED_friends_detail" />
+
+    <TextView
+        android:id="@+id/textView_MONEY_OWED_friends_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Money Owed"
+        app:layout_constraintBottom_toTopOf="@+id/editText_money_owed_friends_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar_trust_friends_detail" />
+
+    <Button
+        android:id="@+id/button_confirm_friends_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_money_owed_friends_detail" />
+</androidx.constraintlayout.widget.ConstraintLayout>
